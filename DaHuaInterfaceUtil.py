@@ -1,7 +1,6 @@
 
 
-file_path='E://Dahua/'
-
+file_path='E://Dahua/200huan/'
 
 #养育 498, 611
 #道具栏    498+29, 611

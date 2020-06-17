@@ -146,6 +146,7 @@ def complete_task(talk_datas):
     :param talk_datas: 根据不同的对话点不同的位置
     :return:
     '''
+    mouse = MouseUtil()
     screenshot(140, 240, 450, 30, 'temp.jpg')
     img1 = cv2.imread('temp.jpg')
     hash1 = dHash(img1)
@@ -158,6 +159,6 @@ def complete_task(talk_datas):
             con = n
             current_talk = temp_talk
     if con > 3:
-        MouseUtil.submit_task(1, 1)
+        mouse.submit_task(1, 1)
     else:
-        MouseUtil.submit_task(current_talk.talk_type, 1)
+        mouse.submit_task(current_talk.talk_type, 1)

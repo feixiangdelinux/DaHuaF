@@ -2,7 +2,23 @@ from pynput.mouse import Button, Controller
 import time
 
 mouse = Controller()
-mouse.position = (310, 420)
+# mouse.position = (150, 290)
+# mouse.position = (150, 308)
+# mouse.position = (150, 326)
+
+
+mouse.position = (300, 252)
+
+
+
+
+
+
+
+
+
+# nvwa
+# mouse.position = (172, 481)
 
 
 

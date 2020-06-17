@@ -7,16 +7,14 @@ from PictureUtil import screenshot, aHash, cmpHash, dHash
 # screenshot(140, 240, 450, 30, 'yayi.jpg')
 # screenshot(140, 240, 450, 30, 'lilaojiu.jpg')
 # screenshot(140, 240, 450, 30, 'chenfuren.jpg')
-# screenshot(140, 240, 450, 30, 'tiandenglaoren.jpg')
+screenshot(140, 240, 450, 30, 'tiandenglaoren.jpg')
 #
-# screenshot(140, 240, 450, 30, 'huanghuoniu.jpg')
+
 # screenshot(140, 240, 450, 30, 'hudali.jpg')
-# screenshot(140, 240, 450, 30, 'huqiaoer.jpg')
 # screenshot(140, 240, 450, 30, 'youke.jpg')
 # screenshot(140, 240, 450, 30, 'mantangchun.jpg')
 # screenshot(140, 240, 450, 30, 'ludashen.jpg')
 #
-# screenshot(140, 240, 450, 30, 'hexiaojie.jpg')
 # screenshot(140, 240, 450, 30, 'yuhuxian.jpg')
 # screenshot(140, 240, 450, 30, 'niutou.jpg')
 # screenshot(140, 240, 450, 30, 'mamian.jpg')
@@ -39,8 +37,9 @@ from PictureUtil import screenshot, aHash, cmpHash, dHash
 # screenshot(140, 240, 450, 30, 'qinqiong.jpg')
 #
 # screenshot(140, 240, 450, 30, 'laojia.jpg')
-# screenshot(140, 240, 450, 30, 'meihuaxian.jpg')
 # screenshot(140, 240, 450, 30, 'laohoujing.jpg')
+
+# screenshot(174, 248, 29, 16, 'shenling1.jpg')
 
 
 # image_dir1 = 'E:\\Project\\PycharmProjects\\untitled\\haha.jpg'

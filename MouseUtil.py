@@ -103,8 +103,8 @@ class MouseUtil:
         horizontal_one = 469
         vertical_one = 360
         distance = 51
-        horizontal_one = horizontal_one + ((gx - 1) * distance)
-        vertical_one = vertical_one + ((gy - 1) * distance)
+        horizontal_one = horizontal_one + ((gy - 1) * distance)
+        vertical_one = vertical_one + ((gx - 1) * distance)
         self.move_to(horizontal_one, vertical_one)
         self.click_right()
 
@@ -116,8 +116,8 @@ class MouseUtil:
         horizontal_one = 469
         vertical_one = 360
         distance = 51
-        horizontal_one = horizontal_one + ((gx - 1) * distance)
-        vertical_one = vertical_one + ((gy - 1) * distance)
+        horizontal_one = horizontal_one + ((gy - 1) * distance)
+        vertical_one = vertical_one + ((gx - 1) * distance)
         self.move_to(horizontal_one, vertical_one)
         self.click_left()
 
@@ -132,7 +132,7 @@ def submit_task(self, talk_type, position):
     if talk_type == 0:
         self.move_to(150, 290)
     elif talk_type == 1:
-        self.move_to(150, 290)
+        self.move_to(150, 290+((position-1)*18))
     elif talk_type == 2:
-        self.move_to(150, 290)
+        self.move_to(150, 308+((position-1)*18))
     self.click_left()
