@@ -7,7 +7,7 @@ mouse = Controller()
 # mouse.position = (150, 326)
 
 
-mouse.position = (300, 252)
+mouse.position = (150, 290)
 
 
 

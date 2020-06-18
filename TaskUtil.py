@@ -32,7 +32,7 @@ def task_one(current_task, flight_chess_datas, talk_datas, current_coordinate):
     '''
     mouse = MouseUtil()
     flight_chess = get_flight_chess_for_task(current_task, flight_chess_datas)
-    if current_coordinate != flight_chess.flight_chess_info:
+    if current_coordinate != current_task.flight_chess_info:
         # 打开物品栏
         mouse.open_inventory()
         # 选择背包1还是背包2
@@ -69,12 +69,18 @@ def task_two(current_task, flight_chess_datas, talk_datas, current_coordinate):
     # 打开随身商店
     mouse.carry_store()
     # 购买相应的物品
-    if current_task.task_describe == '电风扇发射点发':
-        mouse.carry_store_buy(1, 1)
-    elif current_task.task_describe == '电风扇发射点发':
+    if current_task.task_describe == '梅花仙，说自己想要个簪子，你买一个送给他吧。':
         mouse.carry_store_buy(1, 2)
+    elif current_task.task_describe == '情花仙子的鞋子丢了，正为此事发愁呢，你去买双布鞋送给他。':
+        mouse.carry_store_buy(1, 3)
+    elif current_task.task_describe == '庞夫人前几天看上了一件布裙，你买个他当做礼物吧。':
+        mouse.carry_store_buy(1, 6)
+    elif current_task.task_describe == '秦琼在找一件拿手的武器，你去买一把长枪送给他。':
+        mouse.carry_store_buy(3, 3)
+    elif current_task.task_describe == '老贾想学习武艺，一直头痛找不到铁拳套，你去买个送给他吧。':
+        mouse.carry_store_buy(4, 1)
     flight_chess = get_flight_chess_for_task(current_task, flight_chess_datas)
-    if current_coordinate != flight_chess.flight_chess_info:
+    if current_coordinate != current_task.flight_chess_info:
         # 7选择背包1还是背包2
         mouse.select_inventory(flight_chess.goods_position)
         # 8移动到对应的物品栏位置，右键使用飞行棋
@@ -107,13 +113,13 @@ def task_three(current_task, flight_chess_datas, current_coordinate):
     '''
     mouse = MouseUtil()
     flight_chess = get_flight_chess_for_task(current_task, flight_chess_datas)
-    if current_coordinate != flight_chess.flight_chess_info:
+    if current_coordinate != current_task.flight_chess_info:
         # 打开物品栏
         mouse.open_inventory()
         # 选择背包1还是背包2
-        mouse.select_inventory(flight_chess_datas.goods_position)
+        mouse.select_inventory(flight_chess.goods_position)
         # 移动到对应的物品栏位置，右键使用飞行棋
-        mouse.select_goods(flight_chess_datas.goods_position_x, flight_chess_datas.goods_position_y)
+        mouse.select_goods(flight_chess.goods_position_x, flight_chess.goods_position_y)
         # 使用飞行棋飞到指定地图
         mouse.receive_task()
         if flight_chess.times_left == 1:
@@ -127,7 +133,8 @@ def task_three(current_task, flight_chess_datas, current_coordinate):
     # 选择选项一杀他
     mouse.receive_task()
     # 等待30,杀死NPC
-    time.sleep(16)
+    time.sleep(17)
+    return current_task.flight_chess_info
 
 
 def get_flight_chess_for_task(current_task, flight_chess_datas):
@@ -147,6 +154,8 @@ def complete_task(talk_datas):
     :return:
     '''
     mouse = MouseUtil()
+    mouse.move_to(400, 40)
+    time.sleep(2)
     screenshot(140, 240, 450, 30, 'temp.jpg')
     img1 = cv2.imread('temp.jpg')
     hash1 = dHash(img1)
