@@ -2,6 +2,7 @@ import json
 
 from DaHuaInterfaceUtil import file_path
 from DisposeBean import DisposeBean, TalkBean, FlightBean
+from DisposeUtil import read_ispose
 
 """
 在这里添加任务信息
@@ -112,14 +113,14 @@ from DisposeBean import DisposeBean, TalkBean, FlightBean
 # with open(file_path + 'FlightChessProfile.txt', 'w', encoding='utf-8') as f:
 #     f.write(str)
 
-list = []
-list.append(TalkBean(2, '这长安城中有一大雁塔，听说里面镇压了十万妖魔，要是没有两把刷子可别进去送死。', 'talk_2_1.jpg', ).__dict__)
-list.append(TalkBean(2, '在我所知道的关于孙悟空的故事中，他在一万多年里持续与天地神佛为敌，这到底是为什么呢？究竟为了什么，他要破坏三界的平衡？', 'talk_2_2.jpg', ).__dict__)
-list.append(TalkBean(2, '我们狮驼岭有三位大王，大大王能吞十万天兵，二大王一身铜身铁臂，三大王搏风运雾，谁人能敌？', 'talk_2_3.jpg', ).__dict__)
-list.append(TalkBean(0, '', 'talk_0_1.jpg', ).__dict__)
-str = json.dumps(list).encode('utf-8').decode('unicode_escape')
-with open(file_path + 'TalkProfile.txt', 'w', encoding='utf-8') as f:
-    f.write(str)
+# list = []
+# list.append(TalkBean(2, '这长安城中有一大雁塔，听说里面镇压了十万妖魔，要是没有两把刷子可别进去送死。', 'talk_2_1.jpg', ).__dict__)
+# list.append(TalkBean(2, '在我所知道的关于孙悟空的故事中，他在一万多年里持续与天地神佛为敌，这到底是为什么呢？究竟为了什么，他要破坏三界的平衡？', 'talk_2_2.jpg', ).__dict__)
+# list.append(TalkBean(2, '我们狮驼岭有三位大王，大大王能吞十万天兵，二大王一身铜身铁臂，三大王搏风运雾，谁人能敌？', 'talk_2_3.jpg', ).__dict__)
+# list.append(TalkBean(0, '', 'talk_0_1.jpg', ).__dict__)
+# str = json.dumps(list).encode('utf-8').decode('unicode_escape')
+# with open(file_path + 'TalkProfile.txt', 'w', encoding='utf-8') as f:
+#     f.write(str)
 
 
 # list = []
@@ -129,6 +130,25 @@ with open(file_path + 'TalkProfile.txt', 'w', encoding='utf-8') as f:
 # list.append(FlightBean(1, 1, 4, '备用棋', 99).__dict__)
 # list.append(FlightBean(1, 1, 5, '备用棋', 99).__dict__)
 #
-# str = json.dumps(list).encode('utf-8').decode('unicode_escape')
-# with open(file_path + 'FlightChessProfile.txt', 'w', encoding='utf-8') as f:
-#     f.write(str)
+
+
+myClassReBuild = json.loads(read_ispose(file_path + 'FlightChessProfile.txt'))
+flight_chess_datas = []
+for letter in myClassReBuild:
+    flight_chess_datas.append(
+        FlightBean(letter['goods_position'], letter['goods_position_x'], letter['goods_position_y'],
+                   letter['flight_chess_info'], letter['times_left']))
+list = []
+for temp in flight_chess_datas:
+    list.append(temp.__dict__)
+# list.append(FlightBean(2, 3, 6, '备用棋', 99).__dict__)
+#
+# list.append(FlightBean(2, 4, 1, '备用棋', 99).__dict__)
+# list.append(FlightBean(2, 4, 2, '备用棋', 99).__dict__)
+# list.append(FlightBean(2, 4, 3, '备用棋', 99).__dict__)
+# list.append(FlightBean(2, 4, 4, '备用棋', 99).__dict__)
+# list.append(FlightBean(2, 4, 5, '备用棋', 99).__dict__)
+list.append(FlightBean(2, 4, 6, '备用棋', 99).__dict__)
+str = json.dumps(list).encode('utf-8').decode('unicode_escape')
+with open(file_path + 'FlightChessProfile.txt', 'w', encoding='utf-8') as f:
+    f.write(str)

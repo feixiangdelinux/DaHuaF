@@ -2,16 +2,16 @@ import json
 import time
 
 import cv2
+from playsound import playsound
 
 from DaHuaInterfaceUtil import file_path
 from DisposeBean import DisposeBean, FlightBean, TalkBean
 from DisposeUtil import read_ispose
-from FlightChessUtil import mending_chess
 from MouseUtil import MouseUtil
 from PictureUtil import screenshot, dHash, cmpHash
 # 1初始化读取配置文件
 # 200环任务数据
-from TaskUtil import task_one, task_two, task_three, complete_task
+from TaskUtil import task_one, task_two, task_three
 
 myClassReBuild = json.loads(read_ispose(file_path + 'TaskProfile.txt'))
 task_datas = []
@@ -79,6 +79,7 @@ while True:
             f.write(str)
         current_coordinate = ''
         print('没有找到对应任务')
+        playsound("123.mp3")
         break
     else:
         mouse.receive_task()

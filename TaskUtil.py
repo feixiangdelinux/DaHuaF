@@ -46,7 +46,7 @@ def task_one(current_task, flight_chess_datas, talk_datas, current_coordinate):
             flight_chess.times_left = 99
         else:
             flight_chess.times_left = flight_chess.times_left - 1
-        time.sleep(2)
+        time.sleep(3)
     # 点击NPC
     mouse.click_npc(current_task.window_location_x, current_task.window_location_y)
     # 交任务选择选项一
@@ -92,7 +92,7 @@ def task_two(current_task, flight_chess_datas, talk_datas, current_coordinate):
             flight_chess.times_left = 99
         else:
             flight_chess.times_left = flight_chess.times_left - 1
-        time.sleep(2)
+        time.sleep(3)
     else:
         # 关闭物品栏物品栏
         mouse.open_inventory()
@@ -167,7 +167,7 @@ def complete_task(talk_datas):
         if n < con:
             con = n
             current_talk = temp_talk
-    if con > 3:
+    if con > 2:
         mouse.submit_task(1, 1)
     else:
         mouse.submit_task(current_talk.talk_type, 1)
