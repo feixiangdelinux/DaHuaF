@@ -41,6 +41,7 @@ con = 100
 # 筛选出来的最终结果
 current_task = ''
 retryNum = 3
+isFirst = 1
 while True:
     mouse.move_to(400, 40)
     time.sleep(2)
@@ -89,6 +90,10 @@ while True:
         elif current_task.task_type == 2:
             current_coordinate = task_two(current_task, flight_chess_datas, talk_datas, current_coordinate)
         elif current_task.task_type == 3:
-            current_coordinate = task_three(current_task, flight_chess_datas, current_coordinate)
+            if isFirst == 1:
+                current_coordinate = task_three(current_task, flight_chess_datas, current_coordinate, 1)
+                isFirst = 2
+            else:
+                current_coordinate = task_three(current_task, flight_chess_datas, current_coordinate, 2)
     con = 100
     retryNum = 3

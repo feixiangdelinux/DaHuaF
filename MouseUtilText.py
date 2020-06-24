@@ -4,7 +4,7 @@ import time
 mouse = Controller()
 # mouse.position = (150, 290)
 # mouse.position = (150, 308)
-mouse.position = (558, 110)
+mouse.position = (467, 270)
 # mouse.position = (172, 480)
 
 

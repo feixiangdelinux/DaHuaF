@@ -46,7 +46,7 @@ def task_one(current_task, flight_chess_datas, talk_datas, current_coordinate):
             flight_chess.times_left = 99
         else:
             flight_chess.times_left = flight_chess.times_left - 1
-        time.sleep(3)
+        time.sleep(2)
     # 点击NPC
     mouse.click_npc(current_task.window_location_x, current_task.window_location_y)
     # 交任务选择选项一
@@ -92,7 +92,7 @@ def task_two(current_task, flight_chess_datas, talk_datas, current_coordinate):
             flight_chess.times_left = 99
         else:
             flight_chess.times_left = flight_chess.times_left - 1
-        time.sleep(3)
+        time.sleep(2)
     else:
         # 关闭物品栏物品栏
         mouse.open_inventory()
@@ -103,7 +103,7 @@ def task_two(current_task, flight_chess_datas, talk_datas, current_coordinate):
     return current_task.flight_chess_info
 
 
-def task_three(current_task, flight_chess_datas, current_coordinate):
+def task_three(current_task, flight_chess_datas, current_coordinate, isFirst):
     '''200环任务三(杀怪的任务)
     打开物品,选择飞行棋,飞到指定地图,点击npc,选择第一个选项杀他,等待30秒
     :param current_task:
@@ -133,7 +133,9 @@ def task_three(current_task, flight_chess_datas, current_coordinate):
     # 选择选项一杀他
     mouse.receive_task()
     # 等待30,杀死NPC
-    time.sleep(17)
+    if isFirst == 1:
+        time.sleep(30)
+    time.sleep(11)
     return current_task.flight_chess_info
 
 
@@ -155,7 +157,7 @@ def complete_task(talk_datas):
     '''
     mouse = MouseUtil()
     mouse.move_to(400, 40)
-    time.sleep(2)
+    time.sleep(1)
     screenshot(140, 240, 450, 30, 'temp.jpg')
     img1 = cv2.imread('temp.jpg')
     hash1 = dHash(img1)

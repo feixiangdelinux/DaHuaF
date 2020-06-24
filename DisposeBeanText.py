@@ -34,7 +34,7 @@ from DisposeUtil import read_ispose
 # list.append(DisposeBean(1, '顶天柱前几天表演弄伤身体了，帮我送点金创药给他。', 'dingtianzhu1.jpg', '顶天柱', 269, 265, '洛阳城(198,69)').__dict__)
 # list.append(DisposeBean(1, '何老才，在收集羚羊角，你买一个送给他吧。', 'helaocai.jpg', '何老才', 296, 256, '洛阳城(248,118)').__dict__)
 # list.append(DisposeBean(1, '游方术士，说想收门徒苦于找不到徒弟，你去帮助他一下吧。', 'youfangshushi.jpg', '游方术士', 282, 247, '方寸山(21,23)').__dict__)
-# list.append(DisposeBean(1, '五指山土，地说找你有点事情，你去看看吧。', 'wuzhishantudi.jpg', '五指山土地', 389, 70, '五指山(165,49)').__dict__)
+# list.append(DisposeBean(1, '五指山土，地说找你有点事情，你去看看吧。', 'wuzhishantudi.jpg', '五指山土地', 467, 270, '五指山(163,43)').__dict__)
 # list.append(DisposeBean(1, '鲁大婶，最近很苦恼你去问问为何如此苦恼。', 'ludashen.jpg', '鲁大婶', 331, 213, '洛阳城(157,138)').__dict__)
 # list.append(DisposeBean(1, '前几天洛阳桥发生挤压，游客受到了惊吓，你去看看那吧。', 'youke.jpg', '游客', 332, 235, '洛阳城(175,102)').__dict__)
 # list.append(DisposeBean(1, '满堂春，在找亲父你有什么消息赶快告诉他吧。', 'mantangchun.jpg', '满堂春', 307, 261, '洛阳城(214,113)').__dict__)
@@ -88,7 +88,7 @@ from DisposeUtil import read_ispose
 # list.append(FlightBean(2, 1, 2, '长寿村(14,145)', 3).__dict__)
 # list.append(FlightBean(2, 1, 3, '地狱迷宫2(25,15)', 18).__dict__)
 # list.append(FlightBean(2, 1, 4, '地狱迷宫4(6,19)', 10).__dict__)
-# list.append(FlightBean(2, 1, 5, '五指山(165,49)', 8).__dict__)
+# list.append(FlightBean(2, 1, 5, '五指山(163,43)', 8).__dict__)
 # list.append(FlightBean(2, 1, 6, '五指山(21,43)', 12).__dict__)
 #
 # list.append(FlightBean(2, 2, 1, '普陀山(15,55)', 1).__dict__)
@@ -144,10 +144,10 @@ for temp in flight_chess_datas:
 # list.append(FlightBean(2, 3, 6, '备用棋', 99).__dict__)
 #
 # list.append(FlightBean(2, 4, 1, '备用棋', 99).__dict__)
-# list.append(FlightBean(2, 4, 2, '备用棋', 99).__dict__)
-# list.append(FlightBean(2, 4, 3, '备用棋', 99).__dict__)
-# list.append(FlightBean(2, 4, 4, '备用棋', 99).__dict__)
-# list.append(FlightBean(2, 4, 5, '备用棋', 99).__dict__)
+list.append(FlightBean(2, 4, 2, '备用棋', 99).__dict__)
+list.append(FlightBean(2, 4, 3, '备用棋', 99).__dict__)
+list.append(FlightBean(2, 4, 4, '备用棋', 99).__dict__)
+list.append(FlightBean(2, 4, 5, '备用棋', 99).__dict__)
 list.append(FlightBean(2, 4, 6, '备用棋', 99).__dict__)
 str = json.dumps(list).encode('utf-8').decode('unicode_escape')
 with open(file_path + 'FlightChessProfile.txt', 'w', encoding='utf-8') as f:
