@@ -80,6 +80,8 @@ def task_two(current_task, flight_chess_datas, talk_datas, current_coordinate):
     elif current_task.task_describe == '老贾想学习武艺，一直头痛找不到铁拳套，你去买个送给他吧。':
         mouse.carry_store_buy(4, 1)
     flight_chess = get_flight_chess_for_task(current_task, flight_chess_datas)
+    # 打开物品栏
+    mouse.open_inventory()
     if current_coordinate != current_task.flight_chess_info:
         # 7选择背包1还是背包2
         mouse.select_inventory(flight_chess.goods_position)
@@ -134,7 +136,8 @@ def task_three(current_task, flight_chess_datas, current_coordinate, isFirst):
     mouse.receive_task()
     # 等待30,杀死NPC
     if isFirst == 1:
-        time.sleep(30)
+        time.sleep(20)
+        # time.sleep(1)
     time.sleep(11)
     return current_task.flight_chess_info
 

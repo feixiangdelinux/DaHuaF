@@ -91,7 +91,8 @@ class MouseUtil:
     def carry_store(self):
         """打开随身商店
         """
-        self.move_to(735, 555)
+        # self.move_to(735, 555)
+        self.move_to(650, 555)
         self.click_left()
 
     def carry_store_buy(self, gx, gy):

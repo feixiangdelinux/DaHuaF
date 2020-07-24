@@ -3,6 +3,8 @@
 
 
 file_path = 'E://Dahua/200huan/'
+tian_path = 'E://Dahua/ZuoTian/'
+huishou_path = 'E://Dahua/KeHuiSou/'
 # 养育 498, 611
 # 道具栏    498+29, 611
 # 组队 498, 611

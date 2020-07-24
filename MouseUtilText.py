@@ -1,65 +1,16 @@
-from pynput.mouse import Button, Controller
-import time
+from pynput.mouse import Controller
+
+# 488
+# 792
+# 304
+# 50.5
+
+# 202
+# 404
+# 50.5
+
 
 mouse = Controller()
-# mouse.position = (150, 290)
-# mouse.position = (150, 308)
-mouse.position = (467, 270)
-# mouse.position = (172, 480)
-
-
-# mouse.position = (150, 290)
-
-
-
-
-
-
-
-
-
-# nvwa
-# mouse.position = (172, 481)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# mouse.move_to(450, 335)
-# mouse.move_to(450, 539)
-# mouse.move_to(444, 400)
-# mouse.move_to(750, 400)
-# mouse.move_to(469, 360)
-
-
-
-
+# mouse.position = (488, 225)
+# mouse.position = (1 * 50.5 + 463, 202)
+mouse.position = (410, 190)

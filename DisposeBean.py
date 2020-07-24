@@ -1,11 +1,12 @@
 import cv2
 
-from DaHuaInterfaceUtil import file_path
+from DaHuaInterfaceUtil import file_path, huishou_path
 from PictureUtil import dHash
 
 
 def get_pic_hash(task_picture):
-    img1 = cv2.imread(file_path + task_picture)
+    # img1 = cv2.imread(file_path + task_picture)
+    img1 = cv2.imread(huishou_path + task_picture)
     return dHash(img1)
 
 

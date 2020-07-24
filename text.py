@@ -11,6 +11,7 @@ from MouseUtil import MouseUtil
 from PictureUtil import screenshot, dHash, cmpHash
 # 1初始化读取配置文件
 # 200环任务数据
+# 800*600且系统消息在窗口内最小化
 from TaskUtil import task_one, task_two, task_three
 
 myClassReBuild = json.loads(read_ispose(file_path + 'TaskProfile.txt'))
@@ -40,38 +41,12 @@ current_coordinate = ''
 con = 100
 # 筛选出来的最终结果
 current_task = ''
+# 尝试次数
 retryNum = 3
+# 是否是第一次
 isFirst = 1
 while True:
-    mouse.move_to(400, 40)
-    time.sleep(2)
-    screenshot(140, 240, 450, 30, 'temp.jpg')
-    img1 = cv2.imread('temp.jpg')
-    hash1 = dHash(img1)
-    if hashHeiPing == hash1:
-        time.sleep(2)
-        retryNum = retryNum - 1
-        screenshot(140, 240, 450, 30, 'temp.jpg')
-        img1 = cv2.imread('temp.jpg')
-        hash1 = dHash(img1)
-        if retryNum == 0:
-            break
-    for temp_task in task_datas:
-        n = cmpHash(hash1, temp_task.imgHash)
-        if n < con:
-            con = n
-            current_task = temp_task
-    if current_task.task_type == 3:
-        con = 100
-        screenshot(174, 248, 29, 16, 'temp.jpg')
-        img1 = cv2.imread('temp.jpg')
-        hash1 = dHash(img1)
-        for temp_task in task_datas:
-            n = cmpHash(hash1, temp_task.imgHash)
-            if n < con:
-                con = n
-                current_task = temp_task
-    if con > 3:
+    if retryNum == 0:
         list = []
         for i in flight_chess_datas:
             list.append(i.__dict__)
@@ -82,18 +57,45 @@ while True:
         print('没有找到对应任务')
         playsound("123.mp3")
         break
+    mouse.move_to(400, 40)
+    time.sleep(2)
+    screenshot(140, 240, 450, 30, 'temp.jpg')
+    img1 = cv2.imread('temp.jpg')
+    hash1 = dHash(img1)
+    if hashHeiPing != hash1:
+        for temp_task in task_datas:
+            n = cmpHash(hash1, temp_task.imgHash)
+            if n < con:
+                con = n
+                current_task = temp_task
+        if current_task.task_type == 3:
+            con = 100
+            screenshot(174, 248, 29, 16, 'temp.jpg')
+            img1 = cv2.imread('temp.jpg')
+            hash1 = dHash(img1)
+            for temp_task in task_datas:
+                n = cmpHash(hash1, temp_task.imgHash)
+                if n < con:
+                    con = n
+                    current_task = temp_task
+        if con < 3:
+            mouse.receive_task()
+            print(current_task.task_describe)
+            if current_task.task_type == 1:
+                current_coordinate = task_one(current_task, flight_chess_datas, talk_datas, current_coordinate)
+            elif current_task.task_type == 2:
+                current_coordinate = task_two(current_task, flight_chess_datas, talk_datas, current_coordinate)
+            elif current_task.task_type == 3:
+                if isFirst == 1:
+                    current_coordinate = task_three(current_task, flight_chess_datas, current_coordinate, 1)
+                    isFirst = 2
+                else:
+                    current_coordinate = task_three(current_task, flight_chess_datas, current_coordinate, 2)
+        else:
+            retryNum = retryNum - 1
+            continue
     else:
-        mouse.receive_task()
-        print(current_task.task_describe)
-        if current_task.task_type == 1:
-            current_coordinate = task_one(current_task, flight_chess_datas, talk_datas, current_coordinate)
-        elif current_task.task_type == 2:
-            current_coordinate = task_two(current_task, flight_chess_datas, talk_datas, current_coordinate)
-        elif current_task.task_type == 3:
-            if isFirst == 1:
-                current_coordinate = task_three(current_task, flight_chess_datas, current_coordinate, 1)
-                isFirst = 2
-            else:
-                current_coordinate = task_three(current_task, flight_chess_datas, current_coordinate, 2)
+        retryNum = retryNum - 1
+        continue
     con = 100
     retryNum = 3
