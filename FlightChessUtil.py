@@ -59,6 +59,7 @@ def tian_mending_chess(flight_chess_datas, gx, gy):
         mouse.select_goods(gx, gy)
         mouse.click_right()
         mouse.select_option(2)
-        time.sleep(3)
+        # 1关闭物品栏
+        mouse.click_function(2)
         # 把新数据保存
         flight_chess.times_left = 99

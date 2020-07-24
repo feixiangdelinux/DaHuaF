@@ -17,13 +17,13 @@ import json
 import time
 
 import cv2
-from playsound import playsound
 
 from DaHuaInterfaceUtil import tian_path, huishou_path
 from DisposeBean import FlightBean, TalkBean
 from DisposeUtil import read_ispose
 from FlightChessUtil import tian_mending_chess
 from MouseTwoUtil import MouseTwoUtil
+
 # 飞行棋数据
 from PictureUtil import screenshot, dHash, cmpHash
 
@@ -39,81 +39,98 @@ for letter in myClassReBuild:
     kehuishou_datas.append(TalkBean(letter['talk_type'], letter['talk_describe'], letter['talk_picture']))
 mouse = MouseTwoUtil()
 
-# # 做天
-# for num in range(0, 17):
-#     # 李靖领取任务
+# # 吃药
+# for hao in range(1, 6):
+#     mouse.move_to(hao * 160 - 29, 880)
+#     mouse.click_left()
 #     # 1点击物品栏
 #     mouse.click_function(2)
 #     # 2右键使用飞行棋飞到指定地点
-#     mouse.select_goods(1, 1)
+#     mouse.select_goods(1, 6)
 #     mouse.click_right()
-#     mouse.select_option(1)
-#     tian_mending_chess(flight_chess_datas, 1, 1)
-#     # 3点击npc领取任务
-#     time.sleep(2)
-#     mouse.move_to(350, 140)
-#     mouse.click_left()
-#     mouse.select_option(4)
-#
-#     # 杀三头魔王
-#     # 1点击物品栏
 #     mouse.click_function(2)
-#     # 2右键使用飞行棋飞到指定地点
-#     mouse.select_goods(1, 2)
-#     mouse.click_right()
-#     mouse.select_option(1)
-#     tian_mending_chess(flight_chess_datas, 1, 2)
-#     # 3点击npc领取任务
-#     time.sleep(2)
-#     mouse.move_to(360, 280)
+#     # 最小化客户端
+#     mouse.move_to(1160, 10)
 #     mouse.click_left()
-#     mouse.select_option(1)
-#     time.sleep(26)
-#
-#     # 杀黑山妖王
-#     # 1点击物品栏
-#     mouse.click_function(2)
-#     # 2右键使用飞行棋飞到指定地点
-#     mouse.select_goods(1, 3)
-#     mouse.click_right()
-#     mouse.select_option(1)
-#     tian_mending_chess(flight_chess_datas, 1, 3)
-#     # 3点击npc领取任务
-#     time.sleep(2)
-#     mouse.move_to(405, 220)
-#     mouse.click_left()
-#     mouse.select_option(1)
-#     time.sleep(26)
-#
-#     # 杀蓝色妖王
-#     # 1点击物品栏
-#     mouse.click_function(2)
-#     # 2右键使用飞行棋飞到指定地点
-#     mouse.select_goods(1, 4)
-#     mouse.click_right()
-#     mouse.select_option(1)
-#     tian_mending_chess(flight_chess_datas, 1, 4)
-#     # 3点击npc领取任务
-#     time.sleep(2)
-#     mouse.move_to(665, 250)
-#     mouse.click_left()
-#     mouse.select_option(1)
-#     time.sleep(26)
-#
-#     # 杀万年妖王
-#     # 1点击物品栏
-#     mouse.click_function(2)
-#     # 2右键使用飞行棋飞到指定地点
-#     mouse.select_goods(1, 5)
-#     mouse.click_right()
-#     mouse.select_option(1)
-#     tian_mending_chess(flight_chess_datas, 1, 5)
-#     # 3点击npc领取任务
-#     time.sleep(2)
-#     mouse.move_to(610, 350)
-#     mouse.click_left()
-#     mouse.select_option(1)
-#     time.sleep(26)
+# # 打开队长客户端
+# mouse.move_to(1 * 160 - 29, 880)
+# mouse.click_left()
+
+# 做天
+for num in range(0, 32):
+    # 李靖领取任务
+    # 1点击物品栏
+    mouse.click_function(2)
+    # 2右键使用飞行棋飞到指定地点
+    mouse.select_goods(1, 1)
+    mouse.click_right()
+    mouse.select_option(1)
+    tian_mending_chess(flight_chess_datas, 1, 1)
+    # 3点击npc领取任务
+    time.sleep(2)
+    mouse.move_to(350, 140)
+    mouse.click_left()
+    mouse.select_option(4)
+
+    # 杀三头魔王
+    # 1点击物品栏
+    mouse.click_function(2)
+    # 2右键使用飞行棋飞到指定地点
+    mouse.select_goods(1, 2)
+    mouse.click_right()
+    mouse.select_option(1)
+    tian_mending_chess(flight_chess_datas, 1, 2)
+    # 3点击npc领取任务
+    time.sleep(2)
+    mouse.move_to(360, 280)
+    mouse.click_left()
+    mouse.select_option(1)
+    time.sleep(20)
+
+    # 杀黑山妖王
+    # 1点击物品栏
+    mouse.click_function(2)
+    # 2右键使用飞行棋飞到指定地点
+    mouse.select_goods(1, 3)
+    mouse.click_right()
+    mouse.select_option(1)
+    tian_mending_chess(flight_chess_datas, 1, 3)
+    # 3点击npc领取任务
+    time.sleep(2)
+    mouse.move_to(405, 220)
+    mouse.click_left()
+    mouse.select_option(1)
+    time.sleep(18)
+
+    # 杀蓝色妖王
+    # 1点击物品栏
+    mouse.click_function(2)
+    # 2右键使用飞行棋飞到指定地点
+    mouse.select_goods(1, 4)
+    mouse.click_right()
+    mouse.select_option(1)
+    tian_mending_chess(flight_chess_datas, 1, 4)
+    # 3点击npc领取任务
+    time.sleep(2)
+    mouse.move_to(665, 250)
+    mouse.click_left()
+    mouse.select_option(1)
+    time.sleep(18)
+
+    # 杀万年妖王
+    # 1点击物品栏
+    mouse.click_function(2)
+    # 2右键使用飞行棋飞到指定地点
+    mouse.select_goods(1, 5)
+    mouse.click_right()
+    mouse.select_option(1)
+    tian_mending_chess(flight_chess_datas, 1, 5)
+    # 3点击npc领取任务
+    time.sleep(2)
+    mouse.move_to(610, 350)
+    mouse.click_left()
+    mouse.select_option(1)
+    time.sleep(18)
 
 # 去石破烂卖掉垃圾换钱
 # 1点击物品栏
@@ -166,22 +183,3 @@ for hao in range(1, 6):
     # 最小化客户端
     mouse.move_to(1160, 10)
     mouse.click_left()
-
-
-# # 吃药
-# for hao in range(1, 6):
-#     mouse.move_to(hao * 160 - 29, 880)
-#     mouse.click_left()
-#     # 1点击物品栏
-#     mouse.click_function(2)
-#     # 2右键使用飞行棋飞到指定地点
-#     mouse.select_goods(1, 6)
-#     mouse.click_right()
-#     mouse.click_function(2)
-#     # 最小化客户端
-#     mouse.move_to(1160, 10)
-#     mouse.click_left()
-# # 打开队长客户端
-# mouse.move_to(1 * 160 - 29, 880)
-# mouse.click_left()
-
