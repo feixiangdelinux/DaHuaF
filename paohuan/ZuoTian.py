@@ -17,16 +17,15 @@ import json
 import time
 
 import cv2
-from playsound import playsound
 
-from DaHuaInterfaceUtil import tian_path, huishou_path
-from DisposeBean import FlightBean, TalkBean
-from DisposeUtil import read_ispose
-from FlightChessUtil import tian_mending_chess
-from MouseTwoUtil import MouseTwoUtil
+from paohuan.DaHuaInterfaceUtil import tian_path, huishou_path
+from paohuan.DisposeBean import FlightBean, TalkBean
+from paohuan.DisposeUtil import read_ispose
+from paohuan.FlightChessUtil import tian_mending_chess
+from paohuan.MouseTwoUtil import MouseTwoUtil
 
 # 飞行棋数据
-from PictureUtil import screenshot, dHash, cmpHash
+from paohuan.PictureUtil import screenshot, dHash, cmpHash
 
 myClassReBuild = json.loads(read_ispose(tian_path + 'ZuoTianFlightChess.txt'))
 flight_chess_datas = []

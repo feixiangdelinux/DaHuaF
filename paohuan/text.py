@@ -4,16 +4,18 @@ import time
 import cv2
 from playsound import playsound
 
-from DaHuaInterfaceUtil import file_path
-from DisposeBean import DisposeBean, FlightBean, TalkBean
-from DisposeUtil import read_ispose
-from MouseUtil import MouseUtil
-from PictureUtil import screenshot, dHash, cmpHash
+from paohuan.DaHuaInterfaceUtil import file_path
+from paohuan.DisposeBean import DisposeBean, FlightBean, TalkBean
+from paohuan.DisposeUtil import read_ispose
+from paohuan.MouseUtil import MouseUtil
+from paohuan.PictureUtil import screenshot, dHash, cmpHash
 # 1初始化读取配置文件
 # 200环任务数据
 # 800*600且系统消息在窗口内最小化
-from TaskUtil import task_one, task_two, task_three
-
+from paohuan.TaskUtil import task_one, task_two, task_three
+'''
+playsound
+'''
 myClassReBuild = json.loads(read_ispose(file_path + 'TaskProfile.txt'))
 task_datas = []
 for letter in myClassReBuild:

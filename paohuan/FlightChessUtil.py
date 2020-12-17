@@ -1,7 +1,7 @@
 import time
 
-from MouseTwoUtil import MouseTwoUtil
-from MouseUtil import MouseUtil
+from paohuan.MouseTwoUtil import MouseTwoUtil
+from paohuan.MouseUtil import MouseUtil
 
 
 def mending_chess(flight_chess, flight_chess_datas):

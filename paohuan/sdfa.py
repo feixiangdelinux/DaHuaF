@@ -2,11 +2,10 @@ import json
 
 import cv2
 
-from DaHuaInterfaceUtil import file_path
-from DisposeBean import TalkBean
-from DisposeBeanText import myClassReBuild
-from DisposeUtil import read_ispose
-from TaskUtil import complete_task
+from paohuan.DaHuaInterfaceUtil import file_path
+from paohuan.DisposeBean import TalkBean
+from paohuan.DisposeUtil import read_ispose
+from paohuan.TaskUtil import complete_task
 # npc对话数据
 myClassReBuild = json.loads(read_ispose(file_path + 'TalkProfile.txt'))
 

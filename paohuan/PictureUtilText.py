@@ -1,6 +1,4 @@
-import cv2
-
-from PictureUtil import screenshot, dHash, cmpHash
+from paohuan.PictureUtil import screenshot
 
 # 截图
 # screenshot(1 * 51 + 26 + 9, 1 * 51 + 176 + 15, 49 - 9, 50 - 15, 'pangujingtie11.jpg')

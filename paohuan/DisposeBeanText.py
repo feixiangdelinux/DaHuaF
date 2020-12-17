@@ -1,7 +1,7 @@
 import json
 
-from DaHuaInterfaceUtil import tian_path, file_path, huishou_path
-from DisposeBean import FlightBean, TalkBean
+from paohuan.DaHuaInterfaceUtil import huishou_path
+from paohuan.DisposeBean import TalkBean
 
 """
 在这里添加任务信息

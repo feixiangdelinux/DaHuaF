@@ -16,9 +16,9 @@ import time
 
 import cv2
 
-from FlightChessUtil import mending_chess
-from MouseUtil import MouseUtil
-from PictureUtil import screenshot, dHash, cmpHash
+from paohuan.FlightChessUtil import mending_chess
+from paohuan.MouseUtil import MouseUtil
+from paohuan.PictureUtil import screenshot, dHash, cmpHash
 
 
 def task_one(current_task, flight_chess_datas, talk_datas, current_coordinate):
