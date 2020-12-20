@@ -78,7 +78,7 @@ def chiyao():
 
 # chiyao()
 # MouseUtil().click_npc(130, 880)
-for i in range(10):
+for i in range(50):
     print(i)
     # 使用飞行棋飞到目的地
     MouseUtil().fly_destination(1, 1)
@@ -86,7 +86,7 @@ for i in range(10):
     # 左键点击npc,领取任务
     MouseUtil().click_npc(310, 200)
     MouseUtil().receive_task()
-    time.sleep(2)
+    time.sleep(1)
     MouseUtil().click_left()
     # 如果需要补棋,就补棋
     flight_chess = get_flight_chess_for_position(1, 1)
