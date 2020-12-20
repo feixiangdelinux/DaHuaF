@@ -6,7 +6,7 @@ from pynput.mouse import Controller
 from zuotian.DisposeBean import FlightBean
 from zuotian.DisposeUtil import read_ispose
 from zuotian.MouseUtil import MouseUtil
-
+from playsound import playsound
 file_path = 'E://Dahua/'
 mouse = Controller()
 # 飞行棋数据
@@ -35,7 +35,6 @@ def replenish_piece(y, x):
     if flight_chess.times_left == 0:
         MouseUtil().replenish_piece(2, 2, y, x)
         flight_chess.times_left = 10
-    print(flight_chess.times_left)
 
 
 file_path = 'E://Dahua/'
@@ -68,9 +67,19 @@ def replenish_piece(y, x):
         flight_chess.times_left = 30
 
 
-# 打开物品栏
-MouseUtil().open_inventory()
-for i in range(5):
+def chiyao():
+    for i in range(5):
+        MouseUtil().click_npc((160 * (i + 1)) - 30, 880)
+        MouseUtil().select_inventory(1)
+        MouseUtil().select_goods(4, 6)
+        MouseUtil().select_goods(4, 5)
+        MouseUtil().click_npc((160 * (i + 1)) - 30, 880)
+
+
+# chiyao()
+# MouseUtil().click_npc(130, 880)
+for i in range(10):
+    print(i)
     # 使用飞行棋飞到目的地
     MouseUtil().fly_destination(1, 1)
     time.sleep(1)
@@ -132,3 +141,6 @@ for i in range(5):
     str = json.dumps(list).encode('utf-8').decode('unicode_escape')
     with open(file_path + 'FlightChessProfile.txt', 'w', encoding='utf-8') as f:
         f.write(str)
+MouseUtil().click_npc(130, 880)
+print('任务结束')
+playsound("123.mp3")
